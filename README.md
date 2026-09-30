@@ -1,2 +1,5 @@
 # haihq.site
-HAIHQ's public landing page and website
+
+The public landing page and website for HAIHQ.
+
+This repository will hold the source for HAIHQ's website.
