@@ -182,6 +182,10 @@ h3 {
   max-width: 40rem;
 }
 
+.stack > .catalog {
+  max-width: 44rem;
+}
+
 .section {
   padding-block: clamp(56px, 8vw, 92px);
   border-top: 1px solid var(--stone);
@@ -506,6 +510,12 @@ h3 {
   flex-direction: column;
   align-items: flex-start;
   gap: 18px;
+}
+
+.head-close:has(+ .moments) .why-close,
+.head-close:has(+ .versus) .why-close {
+  border-bottom: 0;
+  padding-bottom: 0;
 }
 
 .why-close {
@@ -848,7 +858,7 @@ h3 {
 
 .versus-focus {
   border-color: var(--charcoal);
-  box-shadow: inset 0 3px 0 var(--acid);
+  border-top: 4px solid var(--acid);
 }
 
 .versus p {
@@ -871,6 +881,7 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px 40px;
+  border-top: 2px solid var(--charcoal);
 }
 
 .moments article {
@@ -879,10 +890,11 @@ h3 {
   gap: 12px;
   min-width: 0;
   padding-top: 16px;
-  border-top: 2px solid var(--charcoal);
 }
 
 .moments article:last-child {
+  margin-top: -2px;
+  padding-top: 14px;
   border-top: 4px solid var(--acid);
 }
 
