@@ -1,0 +1,32 @@
+---
+import { contactEmail, contactUrl, githubUrl, nav } from "../lib/site";
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-bar">
+    <div class="footer-brand">
+      <a href="/" class="lockup" aria-label="HAIHQ, home">
+        <img
+          src="/brand/logo.png"
+          alt=""
+          width="806"
+          height="304"
+          class="footer-logo"
+        />
+      </a>
+      <p>© 2026 HAIHQ</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      {nav.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+      <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+        GitHub
+        <span class="sr-only"> (opens in a new tab)</span>
+      </a>
+      <a class="footer-email" href={contactUrl}>
+        {contactEmail}
+      </a>
+    </nav>
+  </div>
+</footer>

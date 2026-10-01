@@ -1,8 +1,8 @@
-import type { MetadataRoute } from "next";
-import { defaultDescription, siteName, siteTagline } from "@/lib/site";
+import type { APIRoute } from "astro";
+import { defaultDescription, siteName, siteTagline } from "../lib/site";
 
-export default function manifest(): MetadataRoute.Manifest {
-  return {
+export const GET: APIRoute = () => {
+  const manifest = {
     name: `${siteName} / ${siteTagline}`,
     short_name: siteName,
     description: defaultDescription,
@@ -19,4 +19,10 @@ export default function manifest(): MetadataRoute.Manifest {
       },
     ],
   };
-}
+
+  return new Response(JSON.stringify(manifest), {
+    headers: {
+      "Content-Type": "application/manifest+json; charset=utf-8",
+    },
+  });
+};

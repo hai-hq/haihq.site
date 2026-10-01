@@ -1,0 +1,162 @@
+---
+import Mark from "../components/Mark.astro";
+import Base from "../layouts/Base.astro";
+
+const build = [
+  {
+    title: "Models",
+    text: "We explore healthcare-specific AI capabilities, architectures and applications.",
+  },
+  {
+    title: "Benchmarks",
+    text: "We develop ways to measure how Health AI systems behave beyond simple static tests.",
+  },
+  {
+    title: "Tooling",
+    text: "We build open infrastructure for healthcare data, interoperability, evaluation and the systems that AI models and agents rely on.",
+  },
+];
+
+const artifacts = [
+  "software",
+  "a benchmark",
+  "a model",
+  "a dataset",
+  "a specification",
+  "a technical report",
+  "a research paper",
+];
+
+const principles = [
+  {
+    title: "Open by default.",
+    text: "Research becomes more valuable when others can inspect and extend it.",
+  },
+  {
+    title: "Measure before claiming progress.",
+    text: "Health AI systems should be evaluated against clearly defined capabilities and failure modes.",
+  },
+  {
+    title: "Build to understand.",
+    text: "Working systems reveal problems theory alone may miss.",
+  },
+  {
+    title: "Healthcare deserves healthcare-specific research.",
+    text: "General AI is not enough to solve every healthcare problem.",
+  },
+  {
+    title: "Infrastructure matters.",
+    text: "Progress depends on more than models.",
+  },
+];
+---
+
+<Base
+  title="About"
+  description="HAIHQ is a nonprofit, open-source research organization focused on models, benchmarks, and technical infrastructure for Health AI."
+  path="/about"
+>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">HAIHQ / About</p>
+          <h1>Building open foundations for Health AI.</h1>
+          <p class="lede">
+            HAIHQ is a nonprofit, open-source research organization focused on
+            models, benchmarks and technical infrastructure for Health AI.
+          </p>
+        </div>
+        <Mark class="hero-mark" />
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="why-heading">
+      <div class="wrap why">
+        <h2 id="why-heading">Why HAIHQ Exists</h2>
+        <div class="prose">
+          <p>
+            AI is advancing quickly, but healthcare introduces its own technical
+            problems.
+          </p>
+          <p>
+            Healthcare systems have specialized data structures, terminology,
+            workflows, interoperability requirements, safety constraints and
+            operational realities.
+          </p>
+          <p>
+            AI systems operating in healthcare also need reliable ways to access
+            current state, use tools, interact with existing systems and remain
+            correct as the environment changes around them.
+          </p>
+          <p>Those problems need dedicated research and infrastructure.</p>
+        </div>
+        <p class="why-close">HAIHQ exists to work on them.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="build-heading">
+      <div class="wrap stack">
+        <h2 id="build-heading">What We Build</h2>
+        <div class="builds">
+          {build.map((item) => (
+            <article>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="how-heading">
+      <div class="wrap stack">
+        <h2 id="how-heading">How We Work</h2>
+        <p class="lede">HAIHQ is driven by building and experimentation.</p>
+        <div class="stack">
+          <p class="kicker">A project may produce:</p>
+          <ul class="catalog">
+            {artifacts.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <p>
+          The goal is to leave behind useful artifacts others can inspect,
+          reproduce and build on.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="principles-heading">
+      <div class="wrap stack">
+        <h2 id="principles-heading">Principles</h2>
+        <div class="manifesto">
+          {principles.map((item) => (
+            <article class="pair">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="direction-heading">
+      <div class="wrap stack">
+        <h2 id="direction-heading">Long-Term Direction</h2>
+        <p class="lede">
+          HAIHQ aims to become a home for serious open research and
+          infrastructure in Health AI.
+        </p>
+        <p class="kicker">Our role is simple:</p>
+        <blockquote class="pull">
+          <p>
+            Research important problems, build useful systems, evaluate them
+            rigorously, and make the work open.
+          </p>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+</Base>

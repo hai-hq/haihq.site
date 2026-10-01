@@ -1,7 +1,4 @@
 node_modules
-.next
-out
-package-lock.json
-tsconfig.tsbuildinfo
-public/og.png
-public/twitter.png
+dist
+.astro
+pnpm-lock.yaml

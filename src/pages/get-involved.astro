@@ -1,0 +1,163 @@
+---
+import Mark from "../components/Mark.astro";
+import Base from "../layouts/Base.astro";
+import { contactEmail, contactUrl, githubUrl } from "../lib/site";
+
+const contribute = [
+  "software development",
+  "AI and agent systems",
+  "research",
+  "benchmarking",
+  "healthcare expertise",
+  "FHIR and interoperability",
+  "model evaluation",
+  "documentation",
+  "testing",
+];
+
+const partners = [
+  "universities",
+  "research groups",
+  "healthcare organizations",
+  "open-source communities",
+  "technology companies",
+];
+
+const support = [
+  "financial sponsorship",
+  "cloud credits",
+  "GPU compute",
+  "model inference",
+  "datasets",
+  "infrastructure",
+  "engineering support",
+];
+---
+
+<Base
+  title="Get Involved"
+  description="Contribute, collaborate, or sponsor HAIHQ's open research and infrastructure for Health AI."
+  path="/get-involved"
+>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">HAIHQ / Get involved</p>
+          <h1>Help build open Health AI.</h1>
+          <p class="lede">
+            HAIHQ works with people and organizations interested in advancing
+            open research and infrastructure for Health AI.
+          </p>
+        </div>
+        <Mark class="hero-mark" />
+      </div>
+    </section>
+
+    <section
+      class="section"
+      id="contribute"
+      aria-labelledby="contribute-heading"
+    >
+      <div class="wrap stack">
+        <div class="why">
+          <h2 id="contribute-heading">Contribute</h2>
+          <div class="prose">
+            <p>
+              Engineers, researchers, clinicians, designers and technical
+              writers can contribute directly to HAIHQ projects.
+            </p>
+          </div>
+        </div>
+        <div class="labeled">
+          <p class="kicker">Areas may include</p>
+          <ul class="directory">
+            {contribute.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <a
+          class="text-action"
+          href={githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View open projects →<span class="sr-only"> (opens in a new tab)</span>
+        </a>
+      </div>
+    </section>
+
+    <section
+      class="section"
+      id="collaborate"
+      aria-labelledby="collaborate-heading"
+    >
+      <div class="wrap stack">
+        <h2 id="collaborate-heading">Collaborate</h2>
+        <p class="lede">HAIHQ is open to research partnerships with:</p>
+        <ul class="roster">
+          {partners.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <p>
+          Collaborations may involve joint experiments, benchmark development,
+          system evaluation, healthcare-domain expertise or shared research
+          questions.
+        </p>
+        <a class="text-action" href={contactUrl}>
+          Partner with HAIHQ →
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="sponsor" aria-labelledby="sponsor-heading">
+      <div class="wrap stack">
+        <div class="head-close">
+          <h2 id="sponsor-heading">Sponsor</h2>
+          <p class="why-close">
+            Sponsors support the work, not the conclusions.
+          </p>
+        </div>
+        <p>
+          Open research requires compute, engineering time, infrastructure and
+          funding.
+        </p>
+        <div class="labeled">
+          <p class="kicker">Organizations can support HAIHQ through</p>
+          <ul class="catalog">
+            {support.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <a class="text-action" href={contactUrl}>
+          Sponsor HAIHQ →
+        </a>
+      </div>
+    </section>
+
+    <section class="band" id="contact" aria-labelledby="contact-heading">
+      <div class="wrap stack">
+        <h2 id="contact-heading">Contact</h2>
+        <p class="lede">
+          Interested in contributing, collaborating or supporting HAIHQ?
+        </p>
+        <div class="contact-grid">
+          <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+            <strong>
+              GitHub
+              <span class="sr-only"> (opens in a new tab)</span>
+            </strong>
+            <span>For code and open-source contributions.</span>
+          </a>
+          <a href={contactUrl}>
+            <strong>Contact HAIHQ</strong>
+            <span>{contactEmail}. Research partnerships and sponsorship.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

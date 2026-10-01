@@ -1,8 +1,6 @@
-const configuredSiteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://haihq.org";
+const configuredSiteUrl = import.meta.env.SITE ?? "https://haihq.org";
 
-export const siteUrl = configuredSiteUrl;
-export const siteHost = new URL(siteUrl).host;
+export const siteUrl = configuredSiteUrl.replace(/\/$/, "");
 export const siteName = "HAIHQ";
 export const siteTagline = "Open research and infrastructure for Health AI.";
 export const defaultDescription =
@@ -19,8 +17,8 @@ export const nav = [
 ] as const;
 
 export const publicRoutes = [
-  { path: "/", changeFrequency: "weekly" as const, priority: 1 },
-  { path: "/about", changeFrequency: "monthly" as const, priority: 0.8 },
-  { path: "/refhir", changeFrequency: "monthly" as const, priority: 0.9 },
-  { path: "/get-involved", changeFrequency: "monthly" as const, priority: 0.7 },
-];
+  { path: "/", changeFrequency: "weekly", priority: 1 },
+  { path: "/about", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/refhir", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/get-involved", changeFrequency: "monthly", priority: 0.7 },
+] as const;

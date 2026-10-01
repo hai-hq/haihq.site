@@ -1,0 +1,71 @@
+---
+import { githubUrl, nav } from "../lib/site";
+
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+---
+
+<header class="site-header">
+  <div class="wrap header-bar">
+    <a href="/" class="lockup" aria-label="HAIHQ, home">
+      <img
+        src="/brand/logo.png"
+        alt=""
+        width="806"
+        height="304"
+        class="lockup-logo"
+      />
+    </a>
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+    >
+      Menu
+    </button>
+    <nav id="primary-nav" class="nav" aria-label="Primary">
+      {nav.map((item) => (
+        <a
+          href={item.href}
+          aria-current={pathname === item.href ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
+      <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+        GitHub
+        <span class="sr-only"> (opens in a new tab)</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector("#primary-nav");
+
+  function setOpen(open: boolean) {
+    if (
+      !(toggle instanceof HTMLButtonElement) ||
+      !(nav instanceof HTMLElement)
+    ) {
+      return;
+    }
+    nav.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.textContent = open ? "Close" : "Menu";
+  }
+
+  toggle?.addEventListener("click", () => {
+    const open = toggle.getAttribute("aria-expanded") === "true";
+    setOpen(!open);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setOpen(false);
+  });
+
+  nav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+</script>

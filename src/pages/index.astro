@@ -1,0 +1,155 @@
+---
+import Chain from "../components/Chain.astro";
+import Mark from "../components/Mark.astro";
+import Base from "../layouts/Base.astro";
+import { defaultDescription, githubUrl, siteTagline } from "../lib/site";
+
+const work = [
+  {
+    title: "Models",
+    body: ["Healthcare-specific and healthcare-adapted AI models."],
+  },
+  {
+    title: "Datasets",
+    body: [
+      "Open healthcare datasets for training, testing, and studying Health AI systems.",
+    ],
+  },
+  {
+    title: "Benchmarks",
+    body: [
+      "Evaluation systems for measuring capability, reliability, safety, robustness and real-world behavior.",
+    ],
+  },
+  {
+    title: "Tooling",
+    body: [
+      "Open infrastructure for building, testing and operating Health AI systems.",
+    ],
+  },
+];
+
+const method = [
+  { label: "Research", text: "We start with a technical question." },
+  {
+    label: "Build",
+    text: "We build the system needed to investigate it.",
+  },
+  { label: "Evaluate", text: "We measure what happens." },
+  {
+    label: "Open",
+    text: "Then we release the useful parts openly.",
+  },
+];
+---
+
+<Base
+  title={`HAIHQ / ${siteTagline}`}
+  description={defaultDescription}
+  path="/"
+  absoluteTitle
+>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">HAIHQ / Open research</p>
+          <h1>Open research and infrastructure for Health AI.</h1>
+          <div class="prose">
+            <p class="lede">
+              HAIHQ is a nonprofit, open-source research organization building{" "}
+              <strong>
+                models, datasets, benchmarks, and tooling for Health AI.
+              </strong>
+            </p>
+            <p>
+              We research technical problems, build systems to investigate them,
+              evaluate what works, and make the resulting work open.
+            </p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="#current-work">
+              Explore our work
+            </a>
+            <a
+              class="btn"
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub
+              <span class="sr-only"> (opens in a new tab)</span>
+            </a>
+          </div>
+        </div>
+        <Mark class="hero-mark" />
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="work-heading">
+      <div class="wrap stack">
+        <h2 id="work-heading">What We Work On</h2>
+        <div class="cols cols-4">
+          {work.map((item) => (
+            <article>
+              <h3>{item.title}</h3>
+              <div class="prose">
+                {item.body.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="current-work" aria-labelledby="current-heading">
+      <div class="wrap">
+        <div class="stack">
+          <p class="kicker">Current work</p>
+          <h2 id="current-heading">ReFHIR</h2>
+          <p class="lede">
+            Reactive FHIR infrastructure for applications and AI agents.
+          </p>
+          <div class="prose">
+            <p>
+              ReFHIR explores what FHIR should look like when software is
+              continuously operating over changing healthcare state.
+            </p>
+            <p>
+              Instead of manually combining queries, subscriptions, refetching
+              and state reconciliation, applications and AI systems can
+              subscribe directly to live FHIR query results.
+            </p>
+          </div>
+          <a class="text-action" href="/refhir">
+            Explore ReFHIR →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="method-heading">
+      <div class="wrap stack">
+        <h2 id="method-heading">Research through building.</h2>
+        <Chain steps={method} />
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="involved-heading">
+      <div class="wrap stack">
+        <h2 id="involved-heading">Get Involved</h2>
+        <p>
+          HAIHQ works with researchers, engineers, clinicians, healthcare
+          organizations, universities and supporters interested in advancing
+          open Health AI.
+        </p>
+        <p class="modes">Contribute · Collaborate · Sponsor</p>
+        <a class="text-action" href="/get-involved">
+          Get involved →
+        </a>
+      </div>
+    </section>
+  </main>
+</Base>

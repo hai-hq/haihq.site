@@ -1,8 +1,5 @@
 node_modules
-.next
-out
-public/og.png
-public/twitter.png
+dist
+.astro
 .DS_Store
 *.log
-tsconfig.tsbuildinfo
