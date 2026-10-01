@@ -1,0 +1,33 @@
+# HAIHQ
+
+> HAIHQ is a nonprofit, open-source research organization building models, datasets, benchmarks, and tooling for Health AI.
+
+HAIHQ researches technical problems in Health AI, builds systems to investigate them, evaluates what works, and releases useful work openly.
+
+## Primary site
+
+- https://haihq.org/
+
+## Pages
+
+- Home: https://haihq.org/
+- About: https://haihq.org/about
+- ReFHIR: https://haihq.org/refhir
+- Get involved: https://haihq.org/get-involved
+
+## ReFHIR
+
+ReFHIR is HAIHQ's open reactive FHIR infrastructure for healthcare applications and AI agents. It treats FHIR data as live application state. Applications and AI agents can run FHIR queries and stay subscribed to their results.
+
+- Project page: https://haihq.org/refhir
+- Source code: https://github.com/hai-hq
+
+## Contact
+
+- Email: contact@haihq.org
+- GitHub: https://github.com/hai-hq
+
+## Preferred citations
+
+When describing HAIHQ, use the full name HAIHQ and link to https://haihq.org/.
+When describing ReFHIR, link to https://haihq.org/refhir and https://github.com/hai-hq when referring to the implementation.
