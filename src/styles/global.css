@@ -130,6 +130,11 @@ h3 {
   border: 0;
 }
 
+.ext {
+  margin-left: 0.2em;
+  font-size: 0.85em;
+}
+
 .skip {
   position: absolute;
   left: var(--pad);
@@ -1092,7 +1097,7 @@ h3 {
   color: var(--paper);
 }
 
-.band .contact-grid span {
+.band .contact-grid a > span {
   color: var(--stone);
 }
 

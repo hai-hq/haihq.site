@@ -52,11 +52,13 @@ Open infrastructure for building, testing and operating Health AI systems.
 
 **Reactive FHIR infrastructure for applications and AI agents.**
 
-ReFHIR explores what FHIR should look like when software is continuously operating over changing healthcare state.
+ReFHIR is an open-source FHIR server whose query results stay live. Applications and AI agents ask once, and the current answer arrives again whenever the underlying data changes.
 
-Instead of manually combining queries, subscriptions, refetching and state reconciliation, applications and AI systems can subscribe directly to live FHIR query results.
+Instead of manually combining queries, subscriptions, refetching and state reconciliation, the server keeps each result current. It is a full FHIR server underneath, released under Apache-2.0.
 
-**Explore ReFHIR →**
+**Explore ReFHIR** (https://refhir.haihq.org)  
+**Read the docs** (https://refhir.haihq.org/docs/introduction/)  
+**View on GitHub** (https://github.com/hai-hq/refhir)
 
 ---
 
@@ -175,91 +177,12 @@ Our role is simple:
 
 # 3. ReFHIR
 
-## Hero
+ReFHIR has its own site and documentation at **https://refhir.haihq.org**. This website does not host a ReFHIR page.
 
-# ReFHIR
-
-Reactive FHIR infrastructure for applications and AI agents.
-
-**View on GitHub**  
-**Read the technical report**
-
----
-
-## Overview
-
-ReFHIR explores a different programming model for healthcare applications and AI systems. Instead of treating FHIR mainly as a request-response API over healthcare data, it treats FHIR data as live application state.
-
-Applications and AI agents can run FHIR queries and stay subscribed to their results. When underlying resources change, ReFHIR finds which active queries are affected, updates those results, and keeps connected clients aligned with committed state.
-
-The goal is to make real-time healthcare applications and healthcare AI systems simpler to build while staying compatible with the FHIR ecosystem.
-
----
-
-## The answer does not last
-
-Every product rebuilds the list.
-
-**When you ask**
-
-A normal FHIR server returns the active medications. The list is true only for that moment.
-
-**A minute later**
-
-A clinician stops one drug and starts another. The list you are holding is wrong. So is any AI system still reading it.
-
-**The repair**
-
-Ask for the list. Wait for a notice. Ask again. Rebuild the list.
-
----
-
-## What ReFHIR does
-
-You subscribe to that same question. ReFHIR sends the current medication list and leaves the question open.
-
-Added · Changed · Stopped · Deleted
-
-When a medication is added, changed, stopped, or deleted, ReFHIR sends the list as it is now.
-
-The application reads that list. It does not rebuild one from change notices.
-
----
-
-## What an AI system gets
-
-A health AI system reads a record, reasons about it, and may act. Other systems can change the record while it works.
-
-ReFHIR can tell the system the answer changed, and pass it the new answer.
-
-That does not make the system safe. It gives the system the record as it is now, rather than a copy from a minute ago.
-
----
-
-## What is new
-
-The server holds the answer.
-
-FHIR can already send a notice that something in the record changed. The notice does not include the current medication list. Whoever receives it still has to produce the list.
-
-ReFHIR produces the list. That work has been sitting inside each application. Here it sits in the server.
-
-**The usual method**
-
-Ask for the list. Wait for a notice. Ask again. Rebuild the list.
-
-**ReFHIR**
-
-Subscribe to the question. The list stays current.
-
----
-
-## Open research
-
-ReFHIR is part of HAIHQ. A current patient record is something Health AI has been rebuilding inside each product. The server and the technical report are public.
-
-**View on GitHub**  
-**Read the technical report**
+- Navigation: the **ReFHIR** link goes to https://refhir.haihq.org.
+- `/refhir`, `/haifhir` and `/fhirstate` redirect to https://refhir.haihq.org.
+- Documentation: https://refhir.haihq.org/docs/introduction/
+- Source: https://github.com/hai-hq/refhir
 
 ---
 
@@ -289,7 +212,7 @@ Areas may include:
 - documentation;
 - testing.
 
-**View open projects →**
+**View open projects ↗**
 
 ---
 

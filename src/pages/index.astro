@@ -2,7 +2,14 @@
 import Chain from "../components/Chain.astro";
 import Mark from "../components/Mark.astro";
 import Base from "../layouts/Base.astro";
-import { defaultDescription, githubUrl, siteTagline } from "../lib/site";
+import {
+  defaultDescription,
+  githubUrl,
+  refhirDocsUrl,
+  refhirGithubUrl,
+  refhirUrl,
+  siteTagline,
+} from "../lib/site";
 
 const work = [
   {
@@ -78,6 +85,9 @@ const method = [
               rel="noopener noreferrer"
             >
               View on GitHub
+              <span class="ext" aria-hidden="true">
+                ↗
+              </span>
               <span class="sr-only"> (opens in a new tab)</span>
             </a>
           </div>
@@ -114,18 +124,54 @@ const method = [
           </p>
           <div class="prose">
             <p>
-              ReFHIR explores what FHIR should look like when software is
-              continuously operating over changing healthcare state.
+              ReFHIR is an open-source FHIR server whose query results stay
+              live. Applications and AI agents ask once, and the current answer
+              arrives again whenever the underlying data changes.
             </p>
             <p>
               Instead of manually combining queries, subscriptions, refetching
-              and state reconciliation, applications and AI systems can
-              subscribe directly to live FHIR query results.
+              and state reconciliation, the server keeps each result current. It
+              is a full FHIR server underneath, released under Apache-2.0.
             </p>
           </div>
-          <a class="text-action" href="/refhir">
-            Explore ReFHIR →
-          </a>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href={refhirUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore ReFHIR
+              <span class="ext" aria-hidden="true">
+                ↗
+              </span>
+              <span class="sr-only"> (opens in a new tab)</span>
+            </a>
+            <a
+              class="btn"
+              href={refhirDocsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read the docs
+              <span class="ext" aria-hidden="true">
+                ↗
+              </span>
+              <span class="sr-only"> (opens in a new tab)</span>
+            </a>
+            <a
+              class="btn"
+              href={refhirGithubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub
+              <span class="ext" aria-hidden="true">
+                ↗
+              </span>
+              <span class="sr-only"> (opens in a new tab)</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
