@@ -28,12 +28,25 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
         <a
           href={item.href}
           aria-current={pathname === item.href ? "page" : undefined}
+          target={item.external ? "_blank" : undefined}
+          rel={item.external ? "noopener noreferrer" : undefined}
         >
           {item.label}
+          {item.external && (
+            <>
+              <span class="ext" aria-hidden="true">
+                ↗
+              </span>
+              <span class="sr-only"> (opens in a new tab)</span>
+            </>
+          )}
         </a>
       ))}
       <a href={githubUrl} target="_blank" rel="noopener noreferrer">
         GitHub
+        <span class="ext" aria-hidden="true">
+          ↗
+        </span>
         <span class="sr-only"> (opens in a new tab)</span>
       </a>
     </nav>

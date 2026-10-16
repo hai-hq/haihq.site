@@ -1,5 +1,7 @@
 import { defineConfig } from "astro/config";
 
+const refhirUrl = "https://refhir.haihq.org";
+
 const site =
   process.env.PUBLIC_SITE_URL?.replace(/\/$/, "") ??
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
@@ -10,7 +12,8 @@ export default defineConfig({
   output: "static",
   trailingSlash: "never",
   redirects: {
-    "/haifhir": "/refhir",
-    "/fhirstate": "/refhir",
+    "/refhir": refhirUrl,
+    "/haifhir": refhirUrl,
+    "/fhirstate": refhirUrl,
   },
 });

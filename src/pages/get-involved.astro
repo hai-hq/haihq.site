@@ -83,7 +83,11 @@ const support = [
           target="_blank"
           rel="noopener noreferrer"
         >
-          View open projects →<span class="sr-only"> (opens in a new tab)</span>
+          View open projects
+          <span class="ext" aria-hidden="true">
+            ↗
+          </span>
+          <span class="sr-only"> (opens in a new tab)</span>
         </a>
       </div>
     </section>
@@ -148,6 +152,9 @@ const support = [
           <a href={githubUrl} target="_blank" rel="noopener noreferrer">
             <strong>
               GitHub
+              <span class="ext" aria-hidden="true">
+                ↗
+              </span>
               <span class="sr-only"> (opens in a new tab)</span>
             </strong>
             <span>For code and open-source contributions.</span>

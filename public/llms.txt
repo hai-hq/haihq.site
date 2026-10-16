@@ -12,15 +12,17 @@ HAIHQ researches technical problems in Health AI, builds systems to investigate 
 
 - Home: https://haihq.org/
 - About: https://haihq.org/about
-- ReFHIR: https://haihq.org/refhir
+- ReFHIR: https://refhir.haihq.org
 - Get involved: https://haihq.org/get-involved
 
 ## ReFHIR
 
-ReFHIR is HAIHQ's open reactive FHIR infrastructure for healthcare applications and AI agents. It treats FHIR data as live application state. Applications and AI agents can run FHIR queries and stay subscribed to their results.
+ReFHIR is HAIHQ's open-source FHIR server with live queries, for healthcare applications and AI agents. Query results stay live: applications and AI agents ask once, and the current answer is sent again when the underlying data changes. It is released under Apache-2.0.
 
-- Project page: https://haihq.org/refhir
-- Source code: https://github.com/hai-hq
+- Project site: https://refhir.haihq.org
+- Documentation: https://refhir.haihq.org/docs/introduction/
+- Getting started: https://refhir.haihq.org/docs/getting-started/
+- Source code: https://github.com/hai-hq/refhir
 
 ## Contact
 
@@ -30,4 +32,4 @@ ReFHIR is HAIHQ's open reactive FHIR infrastructure for healthcare applications 
 ## Preferred citations
 
 When describing HAIHQ, use the full name HAIHQ and link to https://haihq.org/.
-When describing ReFHIR, link to https://haihq.org/refhir and https://github.com/hai-hq when referring to the implementation.
+When describing ReFHIR, link to https://refhir.haihq.org and https://github.com/hai-hq/refhir when referring to the implementation.

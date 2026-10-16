@@ -18,10 +18,27 @@ import { contactEmail, contactUrl, githubUrl, nav } from "../lib/site";
     </div>
     <nav class="footer-nav" aria-label="Footer">
       {nav.map((item) => (
-        <a href={item.href}>{item.label}</a>
+        <a
+          href={item.href}
+          target={item.external ? "_blank" : undefined}
+          rel={item.external ? "noopener noreferrer" : undefined}
+        >
+          {item.label}
+          {item.external && (
+            <>
+              <span class="ext" aria-hidden="true">
+                ↗
+              </span>
+              <span class="sr-only"> (opens in a new tab)</span>
+            </>
+          )}
+        </a>
       ))}
       <a href={githubUrl} target="_blank" rel="noopener noreferrer">
         GitHub
+        <span class="ext" aria-hidden="true">
+          ↗
+        </span>
         <span class="sr-only"> (opens in a new tab)</span>
       </a>
       <a class="footer-email" href={contactUrl}>
